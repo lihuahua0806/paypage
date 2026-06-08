@@ -1,26 +1,19 @@
-<h2>支付宝转账银行卡</h2>
-
-<p>收款人：张三</p>
-
-<p>收款银行：中信银行</p>
-
-<h3>6217714302477916</h3>
-
-<button onclick="navigator.clipboard.writeText('6217714302477916')">
-复制卡号
-</button>
-<button onclick="openAlipay()" class="pay-btn">
-  立即前往支付宝转账
+<button class="btn pay" onclick="openAli()">
+立即前往支付宝转账
 </button>
 
 <script>
-function openAlipay(){
-  // 先复制卡号
-  navigator.clipboard.writeText("6217714302477916");
+function openAli(){
 
-  alert("卡号已复制，请在支付宝里粘贴银行卡号完成转账");
+    navigator.clipboard.writeText(
+      "6217714302477916"
+    );
 
-  // 尝试打开支付宝
-  window.location.href = "alipays://platformapi/startapp";
+    alert(
+      "卡号已复制，请打开支付宝转账"
+    );
+
+    location.href=
+      "alipays://platformapi/startapp";
 }
 </script>
